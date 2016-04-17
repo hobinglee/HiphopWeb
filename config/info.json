@@ -1,0 +1,16 @@
+{
+     "error":{
+    	 "loginerror":{ "code":0,"mes":"用户名或密码错误!"},
+    	 "adderror":{"code":0,"mes":"增加管理员账户失败！"},
+    	 "checkerror":{"code":0,"mes":"已存在该管理员账户，请重新输入！"},
+    	 "delete_error":{"code":0,"mes":"删除用户失败！"},
+    	 "add_error":{"code":0,"mes":"增加用户失败"},
+    	 "mandelete_error":{"code":0,"mes":"删除人物失败"},
+    	 "mesdelete_error":{"code":0,"mes":"删除留言失败"}
+     },
+     "message":{
+    	 "success":{"code":1}
+    	 
+     }
+     
+}

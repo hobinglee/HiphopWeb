@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/site.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/contact.css" />
+		<!--公共样式-->
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<script src="js/site.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--公共js-->
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/modules.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#sub").click(function(){
+					var name = $("#nameinput");
+					var email =$("#emailinput");
+					var text = $("#text");
+					M.contact({"name":name.val(),"email":email.val(),"text":text.val()},function(obj){
+						if(obj.code==1){
+							name.val("");
+							email.val("");
+							text.val("");
+							alert("提交成功");
+						}
+					});
+				});
+				
+			});
+		</script>
+		<title>留言</title>
+	</head>
+
+	<body>
+	   <!--回到顶部-->
+	    <div class="top_comeback">
+	    	<a href="#top_nav">
+	    		<img src="img/top.png"/>
+	    	</a>
+       </div>
+		<!--顶部导航-->
+		<!--顶部导航-->
+	<div class="top-nav" id="top_nav">
+		<div class="logo">
+			<a href="index.html">Hiphop&nbsp;Club</a>
+		</div>
+		<div class="right-nav" id="right-nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Type.html">Culture</a></li>
+				<li><a href="active.html">Active</a></li>
+				<li><a href="figure.html">Dancer</a></li>
+				<li><a style="color:#d94f5c;border-top-color:#d94f5c;border-bottom-color:#d94f5c" href="Contact.html">Message</a></li>
+			</ul>
+
+		</div>
+	</div>
+		<!--主体内容-->
+		<div class="contact">
+			<div class="contact_top">
+				<h3>Message:</h3>
+			</div>
+			
+			<!--留言提交-->
+			<div class="contact_from">
+				<div action="" method="post">
+					<div class="contact_buttton row">
+						<div class="col-xs-6">
+							<label for="nameinput">昵称：</label>
+							<input type="text" class="form-control" id="nameinput" placeholder="name">
+						</div>
+						<div class="col-xs-6 ">
+							<label for="emailinput">邮箱：</label>
+							<input type="text" class="form-control" id="emailinput" placeholder="email">
+						</div>
+					</div>
+					<div class="textar">
+						<label>留言内容：</label>
+						<textarea class="form-control" rows="8" id="text"></textarea>
+					</div>
+					<input class="btn btn-primary" id="sub" type="submit" value="发送" style="margin-top: 20px;">
+				</div>
+			</div>
+			<div class="conn">
+				<h3>联系我们:</h3>
+				<p>地址：广州市天河区车陂街道 &nbsp;&nbsp;&nbsp;&nbsp;电话：1234567899</p>
+			
+			</div>
+			<div class="message">
+				<h3>网友评论：</h3>
+				<hr />
+				<div class="liuyan">
+					<ul>
+						<li>
+							<div class="liuyan1">
+								<p class="liuyanuser">张三：&nbsp;<span>zhangsan@163.com</span></p>
+								<p class="liuyancontent">哎呦，不错呦</p>
+							</div>
+						</li>
+						<li>
+							<div class="liuyan1">
+								<p class="liuyanuser">张三：</p>
+								<p class="liuyancontent">哎呦，不错呦</p>
+							</div>
+						</li>
+						<li>
+							<div class="liuyan1">
+								<p class="liuyanuser">张三：</p>
+								<p class="liuyancontent">哎呦，不错呦</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+			<!--页脚-->
+	<footer class="footer">
+		<ul>
+			<li><a href="#">关于hiphop club</a></li>
+			<li><a href="#">访客协议</a></li>
+			<li><a href="Contact.html">联系我们</a></li>
+			<li><a href="#" style="border-right:1px solid  #929292;">Copyright by hiphop club</a></li>
+			<li><a href="login.html">后台管理登陆</a></li>
+		</ul>
+	</footer>
+	</body>
+
+</html>

@@ -1,0 +1,119 @@
+<style type="text" id="admin_add">
+    <script type="text/javascript">
+    	$(function() {
+	$("#back").click(function(){
+		M.adminList();
+	});
+	$("#sub_add").click(function() {
+		var name = $("#name");
+		var uname = $("#uname");
+		var pwd = $("#pwd");
+		if (name.val() == "" || uname.val() == "" || pwd.val() == "") {
+			$("#warning").removeClass("hidden").fadeIn(1000);
+			setTimeout(function() {
+				$("#warning").fadeOut("slow", function() {
+					$("#warning").addClass("hidden");
+				});
+			}, 1000 * 2);
+         
+			return;
+		}
+		//验证是否存在该用户
+		M.adminCheck({
+			uname: uname.val()
+		}, function(obj) {
+			if (obj.code == 1) {
+				//验证成功之后,向服务器发送操作数据
+				M.adminAdd({
+					name: name.val(),
+					uname: uname.val(),
+					pwd: pwd.val()
+				}, function(obj) {
+					if (obj.code == 1) {
+						$("#success").removeClass("hidden").fadeIn(1000);
+						setTimeout(function() {
+							$("#success").fadeOut("slow", function() {
+								$("#success").addClass("hidden");
+							});
+						}, 1000 * 2);
+						setTimeout(function(){
+							M.adminList();
+						},2000);
+					}else{
+						
+					}
+				});
+
+			} else {
+                  $("#infoerror").removeClass("hidden").fadeIn(1000);
+						setTimeout(function() {
+							$("#infoerror").fadeOut("slow", function() {
+								$("#infoerror").addClass("hidden");
+							});
+						}, 1000 * 2);
+
+			}
+
+
+		});
+
+	});
+
+});
+    </script>
+	<div class="panel panel-primary">
+		<div class="panel-heading ">
+			<div class="panel-title "><b>增加管理员</b>
+				<a href="#" class="pull-right btn-link" id="back"><span class="glyphicon glyphicon-remove-circle"></span></a>
+			</div>
+
+			<div class="panel-options">
+				<a class="bg" data-target="#sample-modal-dialog-1" data-toggle="modal" href="#sample-modal"><i class="entypo-cog"></i></a>
+				<a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
+				<a data-rel="close" href="#!/tasks" ui-sref="Tasks"><i class="entypo-cancel"></i></a>
+			</div>
+		</div>
+
+		<div class="panel-body">
+			<div  role="form" class="form-horizontal">
+				<!--警告框-->
+				<div class="alert alert-warning alert-dismissable hidden"  id="warning">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                       <strong>警告！</strong>输入不能为空，请重新输入！
+                 </div>
+                <!--成功框-->
+                <div class="alert alert-info alert-dismissable hidden" id="success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <strong>恭喜：</strong> 管理员账户增加成功！
+                </div>
+                <div class="alert alert-info alert-dismissable hidden" id="infoerror">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <strong>提示：</strong> 该管理员已存在，请重新输入！
+                </div>
+				<div class="form-group ">
+					<label class="col-md-1 control-label">管理员</label>
+					<div class="col-md-10">
+						<input type="text" required="" placeholder="管理员姓名" id="name" class="form-control" name="title">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label">账户名</label>
+					<div class="col-md-10">
+						<input type="text" required="" placeholder="账户名" id="uname" class="form-control" name="title">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label">密码</label>
+					<div class="col-md-10">
+						<input type="text" required="" placeholder="密码" id="pwd" class="form-control" name="title">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-10">
+						<input class="btn btn-primary" type="button" id="sub_add" value="增加"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</style>

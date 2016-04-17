@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/site.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/figure.css"/>
+		<script src="js/site.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--鼠标滑动插件-->
+		<script src="js/modernizr.custom.97074.js"></script>
+		<script src="js/jquery.chocolat.js"></script>
+		<script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/modules.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+						$(function() {
+					
+							$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+							
+							M.index().done(function(rows){
+								console.log(rows[1]);
+								
+								var fig = rows[1];
+								new Vue({
+									el:"#figure",
+									data:{
+										fig:fig
+									}
+								})
+							})
+		
+						});	
+		</script>
+	
+		
+	</head>
+	<body>
+		<!--回到顶部-->
+	    <div class="top_comeback">
+	    	<a href="#top_nav">
+	    		<img src="img/top.png"/>
+	    	</a>
+	    	
+       </div>
+		<!--顶部导航-->
+		<!--顶部导航-->
+	<div class="top-nav" id="top_nav">
+		<div class="logo">
+			<a href="index.html">Hiphop&nbsp;Club</a>
+		</div>
+		<div class="right-nav" id="right-nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Type.html">Culture</a></li>
+				<li><a href="active.html">Active</a></li>
+				<li><a style="color:#d94f5c;border-top-color:#d94f5c;border-bottom-color:#d94f5c" href="figure.html">Dancer</a></li>
+				<li><a href="Contact.html">Message</a></li>
+			</ul>
+
+		</div>
+	</div>
+	<!--内容-->
+		<div class="dancer">
+			
+			<div class="gallery">
+				
+				<div class="container" id="figure">
+					<div class="dan_title" style="text-align: center;color:#929292 ;">
+					<h1>dancer</h1>
+					</div>
+					<section>
+						<ul id="da-thumbs" class="da-thumbs" >
+							<li>
+								<a href="img/figure/Danny.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img v-bind:src=fig[3].mimg alt="" />
+									<div>
+										<h5>{{fig[3].mname}}</h5>
+										<span>{{fig[3].mglory}}</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/HOJIN.jpg" alt="" />
+									<div>
+										<h5>Hojin</h5>
+										<span>韩国舞者偶像，是目前韩国优秀Popper中最年轻的一位，，被国内很多poppin爱好者冠以"卡点王"的称号。</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/Taisuke.jpg" alt="" />
+									<div>
+										<h5>Taisuke</h5>
+										<span>来自日本的 他，18岁就以他的旋转和crickets在breaking界崭露头角。2007年Red Bull BC One日本选拔赛的冠军，</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/EB.jpg" alt="" />
+									<div>
+										<h5>EB</h5>
+										<span>世界顶级poppin团体，组合有5个成员，分别是Mr Wiggles、Popin Pete、Skeeter Rabbit、Suga Pop，和老大Boogaloo Sam</span>
+									</div>
+								</a>
+							</li>
+							<li>	
+								<a href="img/a5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/huang.jpg" alt="" />
+									<div>
+										<h5>黄景行</h5>
+										<span>中国舞者，亚洲街舞王子,曾多次获得街舞比赛冠军</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/cloud.jpg" alt="" />
+									<div>
+										<h5>Cloud</h5>
+										<span>1999-Blaze Battle冠军，1999-Featured in Blaze冠军</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/salah.jpg" alt="" />
+									<div>
+										<h5>Salah Benlemqawanssa</h5>
+										<span>06年法国电视真人秀，Incroyable Talent Competition的冠军，07年UKBBoy popping赛冠军</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a8.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/hong.jpg" alt="" />
+									<div>
+										<h5>Kim Hong-Yeol</h5>
+										<span>韩国BBoy。截止2007年，他已经赢得了代表个人或者团体的超过20个冠军，他甚至被冠以“世界上最好的BBoy”之名。</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a9.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/yoshie.jpg" alt="" />
+									<div>
+										<h5>Yoshie</h5>
+										<span>日本街舞女王，BE-BOP-CREW JAPAN成员之一；是日本最好的JAZZ、HIPHOP dancer</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/figure/Danny.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/Danny.jpg" alt="" />
+									<div>
+										<h5>Danny</h5>
+										<span>中国bboy领域的先驱者，是最早代表中国参加世界大赛的bboy。</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/HOJIN.jpg" alt="" />
+									<div>
+										<h5>Hojin</h5>
+										<span>韩国舞者偶像，是目前韩国优秀Popper中最年轻的一位，，被国内很多poppin爱好者冠以"卡点王"的称号。</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/Taisuke.jpg" alt="" />
+									<div>
+										<h5>Taisuke</h5>
+										<span>来自日本的 他，18岁就以他的旋转和crickets在breaking界崭露头角。2007年Red Bull BC One日本选拔赛的冠军，</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/EB.jpg" alt="" />
+									<div>
+										<h5>EB</h5>
+										<span>世界顶级poppin团体，组合有5个成员，分别是Mr Wiggles、Popin Pete、Skeeter Rabbit、Suga Pop，和老大Boogaloo Sam</span>
+									</div>
+								</a>
+							</li>
+							<li>	
+								<a href="img/a5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/huang.jpg" alt="" />
+									<div>
+										<h5>黄景行</h5>
+										<span>中国舞者，亚洲街舞王子,曾多次获得街舞比赛冠军</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/cloud.jpg" alt="" />
+									<div>
+										<h5>Cloud</h5>
+										<span>1999-Blaze Battle冠军，1999-Featured in Blaze冠军</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/salah.jpg" alt="" />
+									<div>
+										<h5>Salah Benlemqawanssa</h5>
+										<span>06年法国电视真人秀，Incroyable Talent Competition的冠军，07年UKBBoy popping赛冠军</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a8.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/hong.jpg" alt="" />
+									<div>
+										<h5>Kim Hong-Yeol</h5>
+										<span>韩国BBoy。截止2007年，他已经赢得了代表个人或者团体的超过20个冠军，他甚至被冠以“世界上最好的BBoy”之名。</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="img/a8.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+									<img src="img/figure/hong.jpg" alt="" />
+									<div>
+										<h5>Kim Hong-Yeol</h5>
+										<span>韩国BBoy。截止2007年，他已经赢得了代表个人或者团体的超过20个冠军，他甚至被冠以“世界上最好的BBoy”之名。</span>
+									</div>
+								</a>
+							</li>
+							
+							<div class="clearfix"> </div>
+						</ul>
+					</section>
+					
+		        </div>
+			</div>
+		</div>	
+		
+		<!--页脚-->
+	<footer class="footer" style="margin-top: 30px;">
+		<ul>
+			<li><a href="#">关于hiphop club</a></li>
+			<li><a href="#">访客协议</a></li>
+			<li><a href="Contact.html">联系我们</a></li>
+			<li><a href="#" >Copyright by hiphop club</a></li>
+			<li><a style="border-right:1px solid  #929292;" href="login.html">后台管理登陆</a></li>
+		</ul>
+	</footer>
+	</body>
+</html>

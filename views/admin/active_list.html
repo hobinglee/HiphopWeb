@@ -1,0 +1,49 @@
+<style type="text" id="active_list">
+<script type="text/javascript">
+     $("#add").click(function(){
+	var html2 = ejs.render($("#active_add").html());
+	$("#main").html("");
+	$("#main").html(html2);
+	});
+	
+	$("#main .del").click(function(){
+		M.activeDelete({"agid":$(this).attr("agid"),"agimg":$(this).attr("agimg")},function(obj){
+			if(obj.code==1){
+				M.activeList();
+			}else{
+				alert("删除失败");
+			}
+		});
+	});
+	
+</script>
+<div class="panel panel-primary">
+		<div class="panel-heading">
+			活动列表<a href="#" style="color: white;" id="add"><span class="glyphicon glyphicon-plus pull-right"></span></a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-md-1">ID</th>
+					<th class="col-md-2">活动名称</th>
+					<th class="col-md-2">主办方</th>
+					<th class="col-md-3">开始时间</th>
+					<th class="col-md-3">宣传图片</th>
+					<th class="col-md-1">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% active.forEach(function(act){ %>
+					<tr >
+						<td><%= act.agcid %></td>
+						<td><%= act.agname %></td>
+						<td><%= act.agsponsor %></td>
+						<td><%= act.agtime %></td>
+						<td><%= act.agimg %></td>
+						<td><a href="#" class="del" agimg="<%= act.agimg %>" agid="<%= act.agcid %>" ><span class="glyphicon glyphicon-trash"  ></span></a></td>
+					</tr>
+				<% })%>
+			</tbody>
+		</table>
+</div>
+</style>

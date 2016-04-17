@@ -1,0 +1,49 @@
+<style type="text" id="adminList">
+	<script type="text/javascript">
+		$(function(){
+	$("#add").click(function(){
+	var html2 = ejs.render($("#admin_add").html());
+	$("#main").html("");
+	$("#main").html(html2);
+	});
+	
+	$("#main .del").click(function(){
+		
+		M.adminDelete({"aid":$(this).attr("aid")},function(obj){
+			if(obj.code==1){
+				M.adminList();
+			}else{
+				alert("删除失败");
+			}
+		});
+	});
+});
+	</script>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			用户列表<a href="#" style="color: white;"><span class="glyphicon glyphicon-plus pull-right" id="add"></span></a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>用户名</th>
+					<th>用户账号</th>
+					<th>超级管理</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% user.forEach(function(user){ %>
+					<tr>
+						<td><%= user.aid %></td>
+						<td><%= user.aname %></td>
+						<td><%= user.account %></td>
+						<td><%= user.issup ? "是" : "否" %></td>
+						<td><a href="#" class="del" aid="<%= user.aid %>" ><span class="glyphicon glyphicon-trash"  ></span></a></td>
+					</tr>
+				<% })%>
+			</tbody>
+		</table>
+	</div>
+</style>

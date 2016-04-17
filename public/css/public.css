@@ -1,0 +1,99 @@
+*{margin:0;padding:0;}
+img{border:0;}
+li{list-style:none;}
+html{width:100%;height:100%;}
+a{
+	text-decoration: none;
+}
+body{
+	background:#232325;
+	position: relative;
+}
+@font-face {
+	font-family:"huawen";
+	src: url("fonts/华文行楷.ttf");
+}
+
+/*回到顶部*/
+.top_comeback{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top:480px;left:1270px;
+	position: fixed;
+	/*display: block;*/
+}
+
+
+
+/*顶部导航*/
+.top-nav{
+	width: 100%;
+	background: #080808;
+	height: 100px;
+		font-family:"mv boli" ;
+}
+/*左边*/
+.top-nav .logo{
+	width: 30%;
+	font-size: 60px;
+	
+	height: 100px;
+	line-height: 100px;
+	float: left;
+}
+.top-nav .logo a{
+	color:white;
+}
+.top-nav .logo a:hover{
+	color: #3BAFDA;;
+	transition: 1s ease-in-out ;
+}
+/*右边*/
+.right-nav{
+	width: 50%;
+	float: right;
+	height: 90px;
+	font-family:"mv boli" ;
+	
+}
+.right-nav ul{
+	margin-top: 20px;
+}
+.right-nav li a{
+	padding: 10px 14px;
+	font-size: 30px;
+	font-weight: 700;
+	float:left;
+	color:#929292;
+	border-top: 2px solid #080808;
+	border-bottom: 2px solid #080808;
+}
+.right-nav li a:hover{
+	color: #fff;
+	transition: 1s ease-in-out ;
+}
+.active_link{
+	transition: 0.5s ease-in;
+}
+
+/*页脚*/
+.footer{
+	padding-left: 300px;
+	background: black;
+}
+.footer li{
+	float: left;
+}
+.footer li a{
+	color:#929292;
+	font-size: 20px;
+	padding-left:10px;
+	padding-right:10px;
+	border-left:1px solid  #929292;
+}
+.footer li a:hover{
+	color: white;
+	transition: 1s ease-in-out ;
+}
+

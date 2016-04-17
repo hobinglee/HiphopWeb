@@ -1,0 +1,51 @@
+<style type="text" id="mans_list">
+	<script type="text/javascript">
+		$(function(){
+	$("#add").click(function(){
+	var html2 = ejs.render($("#mans_add").html());
+	$("#main").html("");
+	$("#main").html(html2);
+	});
+	
+	$("#main .del").click(function(){
+		M.mansDelete({"mid":$(this).attr("mid"),"mimg":$(this).attr("mimg")},function(obj){
+			if(obj.code==1){
+				M.mansList();
+			}else{
+				alert("删除失败");
+			}
+		});
+	});
+	
+	
+});
+
+	</script>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			人物列表<a href="#" style="color: white;" id="add"><span class="glyphicon glyphicon-plus pull-right"></span></a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-md-1">ID</th>
+					<th class="col-md-2">姓名</th>
+					<th class="col-md-5 text-center">主要成就</th>
+					<th class="col-md-3 ">照片</th>
+					<th class="col-md-1">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% page.forEach(function(mans){ %>
+					<tr >
+						<td><%= mans.mid %></td>
+						<td><%= mans.mname %></td>
+						<td><%= mans.mglory %></td>
+						<td><%= mans.mimg %></td>
+						<td><a href="#" class="del" mimg="<%=mans.mimg%>" mid="<%= mans.mid %>" ><span class="glyphicon glyphicon-trash"  ></span></a></td>
+					</tr>
+				<% })%>
+			</tbody>
+		</table>
+	</div>
+</style>

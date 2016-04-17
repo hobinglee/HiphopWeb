@@ -1,0 +1,178 @@
+<style type="text" id="active_add">
+	<script type="text/javascript">
+		$(function(){
+			
+			
+			
+			//点击返回人物列表
+			$("#back").click(function(){
+				M.activeList();
+			});
+			
+			//点击验证数据
+			$("#sub_add").click(function(){
+				var name = $("#name");
+				var sponsor= $("#sponsor");
+				var cent= $("#editor");
+				var imgname = document.getElementById("pullimg").files[0].name;
+				var datetime = $("#date");
+				if (name.val() == "" || sponsor.val() == "" || cent.html() == ""||datetime.val()=="") {
+					$("#warning").removeClass("hidden").fadeIn(1000);
+					setTimeout(function() {
+						$("#warning").fadeOut("slow", function() {
+							$("#warning").addClass("hidden");
+						});
+					}, 1000 * 3);
+		            
+					return;
+				}
+				
+		  	//增加活动信息
+		  	M.activeAdd({"name":name.val(),"sponsor":sponsor.val(),"time":datetime.val(),"cent":cent.html(),"imgname":imgname},function(obj){
+		  		if(obj.code==1){
+		  			$("#success").removeClass("hidden").fadeIn(1000);
+								setTimeout(function() {
+									$("#success").fadeOut("slow", function() {
+										$("#success").addClass("hidden");
+									});
+					}, 1000 * 1);
+					setTimeout(function(){
+						M.activeList();
+					},2000);
+		  		}else{
+		  			
+		  		}
+		  	});
+			});
+			
+			$('#editor').wysiwyg();
+});
+	</script>
+	<div class="panel panel-primary">
+		<div class="panel-heading ">
+			<div class="panel-title panel-primary"><b>增加活动信息</b>
+				<a href="#" class="pull-right btn-link" id="back"><span class="glyphicon glyphicon-remove-circle"></span></a>
+			</div>
+
+		</div>
+
+		<div class="panel-body">
+			<form role="form" action="/upload" class="form-horizontal" method="post"  enctype="multipart/form-data" target="forupload">
+				<!--警告框-->
+				<div class="alert alert-warning alert-dismissable hidden" id="warning">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<strong>警告！</strong>输入不能为空，请重新输入！
+				</div>
+				<!--成功框-->
+				<div class="alert alert-info alert-dismissable hidden" id="success">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<strong>恭喜：</strong> 活动信息增加成功！
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label">活动名称</label>
+					<div class="col-md-11">
+						<input type="text"  placeholder="请输入活动名称" id="name" class="form-control" >
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label" >主办方</label>
+					<div class="col-md-11">
+						<input type="text" placeholder="请输入主办方" id="sponsor" class="form-control" >
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label" >活动日期</label>
+					<div class="col-md-11">
+						<input type="text"   placeholder="请输入活动日期 例:2016-08-05 14:00:00" id="date" class="form-control"  >
+						
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label" >选择图片</label>
+					<input  type="file" multiple class="col-md-2" id="pullimg" placeholder="选择图片" value="选择图片" name="imgfile" />
+				    <iframe name="forupload" hidden="hidden"></iframe>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label" for="intro">活动详情</label>
+					<div class="col-md-11">
+						<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+							<div class="btn-group">
+								<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a data-edit="fontSize 5" class="fs-Five">Huge</a></li>
+									<li><a data-edit="fontSize 3" class="fs-Three">Normal</a></li>
+									<li><a data-edit="fontSize 1" class="fs-One">Small</a></li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Text Highlight Color"><i class="fa fa-paint-brush"></i>&nbsp;<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<p>&nbsp;&nbsp;&nbsp;Text Highlight Color:</p>
+									<li><a data-edit="backColor #00FFFF">Blue</a></li>
+									<li><a data-edit="backColor #00FF00">Green</a></li>
+									<li><a data-edit="backColor #FF7F00">Orange</a></li>
+									<li><a data-edit="backColor #FF0000">Red</a></li>
+									<li><a data-edit="backColor #FFFF00">Yellow</a></li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Color"><i class="fa fa-font"></i>&nbsp;<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<p>&nbsp;&nbsp;&nbsp;Font Color:</p>
+									<li><a data-edit="foreColor #000000">Black</a></li>
+									<li><a data-edit="foreColor #0000FF">Blue</a></li>
+									<li><a data-edit="foreColor #30AD23">Green</a></li>
+									<li><a data-edit="foreColor #FF7F00">Orange</a></li>
+									<li><a data-edit="foreColor #FF0000">Red</a></li>
+									<li><a data-edit="foreColor #FFFF00">Yellow</a></li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+								<a class="btn btn-default" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+								<a class="btn btn-default" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+								<a class="btn btn-default" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+								<a class="btn btn-default" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+								<a class="btn btn-default" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-outdent"></i></a>
+								<a class="btn btn-default" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+								<a class="btn btn-default" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+								<a class="btn btn-default" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+								<a class="btn btn-default" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+								<div class="dropdown-menu input-append">
+									<input placeholder="URL" type="text" data-edit="createLink" />
+									<button class="btn" type="button">Add</button>
+								</div>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-unlink"></i></a>
+								<span class="btn btn-default" title="Insert picture (or just drag & drop)" id="pictureBtn"> <i class="fa fa-picture-o"></i>
+							<input class="imgUpload" type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+						</span>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-default" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+								<a class="btn btn-default" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+							</div>
+						</div>
+						<div id="editor" class="lead" placeholder="让我们了解了解他吧！"></div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-10">
+						<button class="btn btn-info" type="submit" id="sub_add">提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</style>

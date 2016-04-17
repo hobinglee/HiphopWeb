@@ -1,0 +1,27 @@
+.active{width: 1110px; margin: auto;margin-top: 20px;}
+.active .activeing{float: left; width: 554px;border-right: white 4px solid;height: 1300px;}
+.active .review{float: right; width: 552px;min-height: 500px;}
+.active .atitle{line-height: 60px; height: 60px; width: 530px; margin: auto; color: white;text-align: center; font-size: 24px; border-bottom: white solid 2px;}
+.active .activeimg{width: 480px;height:394px; margin:20px auto ; border:#F5F5F5 solid 1px;display: none;}
+.active img{width: 100%; height: 250px;}
+.activeimg .acon{background-color: #204D74;height: 130px; margin-top: 10px;color:white;line-height: 25px; padding-left: 20px; border-top: #ccc 1px dashed;}
+.review .rev{width: 480px;height:396px; margin:20px auto ; border:#F5F5F5 solid 1px;display: none;}
+.review .retext{background-color: #204D74;height: 130px;color:white;line-height: 25px; padding-left: 20px; margin-bottom: 15px;border-bottom: #666 1px dashed;}
+.active .activeimg .xiaoguo{width: 480px;
+	height: 250px;
+	position: relative;
+	left: 0px;
+	top:-394px;
+	background: black;
+	opacity: 0.7;
+	display: none;}
+.active .rev .xiaoguo {width: 480px;
+	height: 250px;
+	position: relative;
+	left: 0px;
+	top:-252px;
+	background: black;
+	opacity: 0.7;
+	display: none;}
+	
+.active .xiaoguo .le{border-bottom:4px white solid ;width: 100%; height: 120px;}

@@ -1,0 +1,153 @@
+
+
+/*轮播*/
+.lunbo{
+	background: #929292;
+	min-height: 500px;
+/*	border-bottom: 2px solid white;*/
+}
+
+.pic{position:relative;overflow:hidden;height:400px;width:890px;z-index:2;margin:0px 0px 30px 190px  ;}
+.pic ul{width:100%;height:100%;position:absolute;top:0;left:0;}
+.pic ul li{position:absolute;}
+.pic ul img{position:relative;top:0;left:0;}
+/*图片位置*/
+.pic ul .pic1{top:-80px;left:2px;z-index:1;}
+.pic ul .pic2{top:110px;left:88px;z-index:2;}
+.pic ul .pic3{top:80px;left:174px;z-index:3;}
+.pic ul .pic4{top:50px;left:260px;z-index:4;}
+.pic ul .pic5{top:80px;left:436px;z-index:3;}
+.pic ul .pic6{top:110px;left:700px;z-index:2;}
+.pic ul .pic7{top:-230px;left:696px;z-index:1;}
+/*图片A标签width和height*/
+.pic ul .pic1 a{height:60px;width:96px;}
+.pic ul .pic2 a{height:180px;width:288px;}
+.pic ul .pic3 a{height:240px;width:384px;}
+.pic ul .pic4 a{height:300px;width:480px;}
+.pic ul .pic5 a{height:240px;width:384px;}
+.pic ul .pic6 a{height:180px;width:288px;}
+.pic ul .pic7 a{height:180px;width:288px;}
+/*图片明暗*/
+.pic ul li.pic1{opacity:0.2;filter:alpha(opacity:20);}
+.pic ul li.pic2{opacity:0.6;filter:alpha(opacity:60);}
+.pic ul li.pic3{opacity:0.9;filter:alpha(opacity:90);}
+.pic ul li.pic4{opacity:1;filter:alpha(opacity:100);}
+.pic ul li.pic5{opacity:0.9;filter:alpha(opacity:90);}
+.pic ul li.pic6{opacity:0.6;filter:alpha(opacity:60);}
+.pic ul li.pic7{opacity:0.2;filter:alpha(opacity:20);}
+/*图片width*/
+.pic ul li.pic1 img{width:96px;}
+.pic ul li.pic2 img{width:288px;}
+.pic ul li.pic3 img{width:384px;}
+.pic ul li.pic4 img{width:480px;}
+.pic ul li.pic5 img{width:384px;}
+.pic ul li.pic6 img{width:288px;}
+.pic ul li.pic7 img{width:288px;}
+.pic ul li{border: 2px solid white;}
+/*箭头部分*/
+.pic span{display:inline-block;*display:inline;*zoom:1;width:80px;height:80px;position:absolute;top:160px;z-index:30;cursor:pointer;opacity:0.7;filter:alpha(opacity=70);}
+.pic:hover span{opacity:1;filter:alpha(opacity=100);}
+.pic span img{width:80px;height:80px;display:block;}
+.pic span.prev{left:200px;}
+.pic span.next{right:120px;}
+
+/*主体部分*/
+.main{
+	width:1110px;
+	min-height: 800px;
+	/*border: 1px solid white;*/
+	margin: 0px auto;
+}
+/*欢迎内容块*/
+.welcome{
+	width: 1110px;
+	height: 300px;
+	
+}
+/*左边*/
+.welcome .welcome_left{
+	width: 50%;
+	height: 300px;
+	float: left;
+}
+.welcome .welcome_left h2{
+	color:#29c4ca;
+	line-height: 50px;
+}
+.welcome .welcome_left p{
+	color:white;
+	font-size: 16px;
+}
+/*右边*/
+.welcome .welcome_right{
+	width: 40%;
+	height: 300px;
+	float: right;
+}
+.welcome .welcome_right img{
+	width: 400px;
+}
+
+/*街舞大神介绍*/
+.dancer_intro{
+	width: 100%;
+	height: 550px;
+}
+.dancer_title{
+	height: 60px;
+	line-height: 60px;
+	font-size: 28px;
+	border-bottom: 2px solid white;
+	margin-top: 20px;
+}
+.dancer_title a{
+	color:#29c4ca ;
+	font-weight: 700;
+	
+}
+.dancer_title a:hover{
+	color: white;
+	transition: 1s ease-in;
+}
+.dancer_intro .dancer_content{
+	width: 100%;
+	height: 500px;	
+}
+.dancer_intro .dancer_content .man_intro{
+	width: 350px;
+	height: 450px;
+	box-shadow: 0px 0px 8px white;
+	margin-top: 10px;
+	margin-left: 14px;
+	float: left;
+	position: relative;
+}
+.dancer_intro .dancer_content .man_intro img{
+	width: 100%;
+	height: 100%;
+}
+.dancer_intro .dancer_content .man_intro .zhegai{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: black;
+	opacity: 0.8;
+	display: none;
+}
+.dancer_intro .dancer_content .man_intro .man_name{
+	color: white;
+	width: 100%;
+	height: 200px;
+	padding-top: 150px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	line-height: 30px;
+	text-align: center;
+	font-size:18px ;
+	display: none;
+}
+
+

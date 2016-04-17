@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "This is a cainiao's demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laienshun/blog.git"
+  },
+  "author": "TheOne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laienshun/blog/issues"
+  },
+  "homepage": "https://github.com/laienshun/blog#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "events": "^1.1.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "log4js": "^0.6.33",
+    "multer": "^1.1.0",
+    "mysql": "^2.10.2",
+    "path": "^0.12.7"
+  }
+}

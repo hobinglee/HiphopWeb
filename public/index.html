@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>主页</title>
+		<link rel="stylesheet" type="text/css" href="css/site.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!--公共样式-->
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<script src="js/site.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<!--公共js-->
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/modules.js" type="text/javascript" charset="utf-8"></script>
+		<!--渲染页面-->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				M.index().done(function(rows){
+					//活动数据
+					var active_imgpath = rows[0];
+					//人物数据
+					var man_intro = rows[1];
+                    
+					new Vue({
+						el:"body",
+						data:{
+							active_imgpath:active_imgpath,
+							man_intro:man_intro
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+    <!--回到顶部-->
+    <div class="top_comeback">
+    	<a href="#top_nav" >
+    		<img src="img/top.png"/>
+    	</a>
+    	
+    </div>
+	<!--顶部导航-->
+	<div class="top-nav" id="top_nav">
+		<div class="logo">
+			<a href="index.html">Hiphop&nbsp;Club</a>
+		</div>
+		<div class="right-nav" id="right-nav">
+			<ul>
+				<li><a style="border-top-color:#d94f5c;border-bottom-color:#d94f5c" href="index.html">Home</a></li>
+				<li><a href="Type.html">Culture</a></li>
+				<li><a href="active.html">Active</a></li>
+				<li><a href="figure.html">Dancer</a></li>
+				<li><a href="Contact.html">Message</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+	<!--顶部轮播-->
+	<div class="lunbo">
+		<div class="pic" id="lunbo">
+		<span class="prev"><img src="img/home/arrow1.png" alt="arrow" /></span>
+		<span class="next"><img src="img/home/arrow2.png" alt="arrow" /></span>
+		<ul>
+			<li class="pic1">
+				<a href="#"><img v-bind:src=active_imgpath[0].agimg alt="旋转木马" /></a>
+			</li>
+			<li class="pic2">
+				<a href="#"><img v-bind:src=active_imgpath[1].agimg  alt="旋转木马" /></a>
+			</li>
+			<li class="pic3">
+				<a href="#"><img v-bind:src=active_imgpath[2].agimg  alt="旋转木马" /></a>
+			</li>
+			<li class="pic4">
+				<a href="#"><img v-bind:src=active_imgpath[3].agimg  alt="旋转木马" /></a>
+			</li>
+			<li class="pic5">
+				<a href="#"><img v-bind:src=active_imgpath[4].agimg  alt="旋转木马" /></a>
+			</li>
+			<li class="pic6">
+				<a href="#"><img v-bind:src=active_imgpath[5].agimg  alt="旋转木马" /></a>
+			</li>
+			<li class="pic7">
+				<a href="#"><img v-bind:src=active_imgpath[0].agimg  alt="旋转木马" /></a>
+			</li>
+		</ul>
+	</div>
+	</div>
+	
+
+	<!--主体部分-->
+	<div class="main"  >
+		<div class="welcome">
+			<div class="welcome_left">
+				<h2>Welcome</h2>
+				<p>life is dance,if you were a dancer!
+					<br />欢迎来到hiphop club ，能来到着这里相信你是个舞蹈爱好者或者dancer。 在这里你能了解到基本的街舞文化，街舞界的大神们，并且还能实时关注最新的比赛活动，让你不会错过每一个精彩 比赛活动。最新上线功能D2D应用于舞者之间快聊，你能在线与网络上的你的同行们快速聊天，享受指尖上的快乐吧！ 本网站暂时处于试验阶段，如果你对网站的改善有什么好的建议，在我们能力的范围之内，一定会尽力为广大用户们 提供更好的体验，请支持我们的努力谢谢！
+				</p>
+			</div>
+			<div class="welcome_right">
+				<img src="img/home/welcome.png" />
+			</div>
+		</div>
+		<!--街舞大神-->
+		<div class="dancer_intro">
+			<div class="dancer_title">
+				<a href="figure.html">街舞大神>></a>
+			</div>
+			<div class="dancer_content">
+				<div class="man_intro">
+					<a href="#">
+						<img v-bind:src=man_intro[0].mimg />
+						<div class="zhegai"></div>
+						<div class="man_name">
+							<h2>{{man_intro[0].mname}}</h2>
+							<p>
+								{{man_intro[0].mglory}}
+							</p>
+						</div>
+					</a>
+
+				</div>
+				<div class="man_intro">
+					<a href="#">
+						<img v-bind:src=man_intro[1].mimg />
+						<div class="zhegai"></div>
+						<div class="man_name">
+							<h2>{{man_intro[1].mname}}</h2>
+							<p>
+								{{man_intro[1].mglory}}
+							</p>
+
+						</div>
+					</a>
+				</div>
+				<div class="man_intro">
+					<a href="#">
+						<img v-bind:src=man_intro[2].mimg />
+						<div class="zhegai"></div>
+						<div class="man_name">
+							<h2>{{man_intro[2].mname}}</h2>
+							<p>
+								{{man_intro[2].mglory}}
+							</p>
+						</div>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!--精彩赛事-->
+		<div class="dancer_intro">
+			<div class="dancer_title">
+				<a href="active.html">精彩赛事>></a>
+			</div>
+			<div class="dancer_content">
+				<div class="man_intro">
+					<a href="#">
+						<img v-bind:src=active_imgpath[0].agimg />
+						<div class="zhegai"></div>
+						<div class="man_name">
+							<h2>{{active_imgpath[0].agname}}</h2>
+							<p>
+								{{active_imgpath[0].agcent}}
+							</p>
+						</div>
+					</a>
+
+				</div>
+				<div class="man_intro">
+					<a href="#">
+						<img v-bind:src=active_imgpath[1].agimg />
+						<div class="zhegai"></div>
+						<div class="man_name">
+							<h2>{{active_imgpath[1].agname}}</h2>
+							<p>
+								{{active_imgpath[1].agcent}}
+							</p>
+						</div>
+					</a>
+
+				</div>
+				<div class="man_intro">
+					<a href="#">
+						<img v-bind:src=active_imgpath[2].agimg />
+						<div class="zhegai"></div>
+						<div class="man_name">
+							<h2>{{active_imgpath[2].agname}}</h2>
+							<p>
+								{{active_imgpath[2].agcent}}
+							</p>
+						</div>
+					</a>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--页脚-->
+	<footer class="footer">
+		<ul>
+			<li><a href="#">关于hiphop club</a></li>
+			<li><a href="#">访客协议</a></li>
+			<li><a href="Contact.html">联系我们</a></li>
+			<li><a href="#" style="border-right:1px solid  #929292;">Copyright by hiphop club</a></li>
+			<li><a href="login.html">后台管理登陆</a></li>
+		</ul>
+	</footer>
+	</body>
+
+</html>

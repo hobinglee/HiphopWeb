@@ -1,0 +1,44 @@
+<style type="text" id="message_list">
+	<script type="text/javascript">
+	  $(function(){
+	  	$("#main .del").click(function(){
+		M.messageDelete({"mesid":$(this).attr("mesid")},function(obj){
+			if(obj.code==1){
+				M.messageList();
+			}else{
+				alert("删除失败");
+			}
+		});
+	});
+	  });
+    </script>
+    <div class="panel panel-primary">
+		<div class="panel-heading">
+			人物列表<a href="#" style="color: white;" id="add"><span class="glyphicon glyphicon-plus pull-right"></span></a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-md-1">ID</th>
+					<th class="col-md-1">访问者</th>
+					<th class="col-md-2">留言时间</th>
+					<th class="col-md-2">E-mail</th>
+					<th class="col-md-5 text-center">Message</th>
+					<th class="col-md-1">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% mes.forEach(function(mes){ %>
+					<tr>
+						<td style="vertical-align: middle;"><%= mes.mesid %></td>
+						<td style="vertical-align: middle;"><%= mes.mname %></td>
+						<td style="vertical-align: middle;"><%= mes.mtime %></td>
+						<td style="vertical-align: middle;"><%= mes.memail %></td>
+						<td style="vertical-align: middle;"><%= mes.mcent %></td>
+						<td style="vertical-align: middle;"><a href="#" class="del" mesid="<%= mes.mesid %>" ><span class="glyphicon glyphicon-trash"  ></span></a></td>
+					</tr>
+				<% })%>
+			</tbody>
+		</table>
+	</div>
+</style>

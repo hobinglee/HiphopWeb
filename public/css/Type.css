@@ -1,0 +1,64 @@
+/*视频*/
+.video{
+	width: 905px;
+	margin: 0px auto;
+	margin-top: 10px;
+	text-align: center;
+	color: #929292;
+}
+
+/*文化介绍*/
+.type{
+	width: 1110px;
+	margin: 0px auto;
+	min-height:1000px ;
+	margin-top: 50px;
+	border-top: 5px solid white;
+}
+.type .introduction{
+	width: 100%;
+	height: 600px;
+}
+.type h2{
+	color:#3BAFDA;
+}
+.type .introduction:nth-child(2n-1){
+	background: #929292;
+}
+.type_content_left{
+	width: 55%;
+	height: 100%;
+	background: url(../img/type/left.png) no-repeat;
+	float: left;
+	background-position-y: 25px;
+}
+.type_content_right{
+	width: 55%;
+	height: 100%;
+	background: url(../img/type/right.png) no-repeat;
+	float: left;
+	background-position-y: 25px;
+	background-position-x: 16px;
+}
+.content_detail1{
+	width: 80%;
+	height:60%;
+	margin-top:150px;
+	margin-left: 50px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 800;
+}
+
+.type_img{
+	width: 45%;
+	height: 100%;
+	float: left;
+}
+.type_img img{
+	width: 100%;
+	height: 80%;
+	margin-top: 55px;
+	border: 3px solid white;
+}

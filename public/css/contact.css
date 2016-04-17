@@ -1,0 +1,44 @@
+ul li {
+	list-style: none;
+}
+h3{
+	color:#3BAFDA ;
+}
+/*提交留言*/
+.contact {
+	width: 1110px;
+	margin: auto;
+	color:#929292;
+	font-size: 14px;
+}
+/*标题*/
+.contact_top h3{
+	color:#3BAFDA ;
+}
+
+.contact .textar {
+	margin-top: 20px;
+}
+
+/*联系我们*/
+.conn {
+	margin-top: 10px;
+	color: #3BAFDA;
+}
+.conn p{
+	color:#929292 ;
+}
+
+/*留言信息*/
+.message {
+	margin-top: 20px;
+}
+
+.message .liuyan ul li {
+	border-bottom: 1px solid #ccc;
+	margin: 20px 0px 20px 0px;
+}
+
+.message .liuyan ul li p span {
+	color: #ccc;
+}
